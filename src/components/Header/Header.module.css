@@ -1,0 +1,9 @@
+.header {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    background-color: #323270;
+}
+
+.header img{
+    width: 180px;
+}

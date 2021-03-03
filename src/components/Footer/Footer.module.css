@@ -1,0 +1,24 @@
+footer {
+    background-color: #323270;
+    color: white;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding: 15px 0;
+}
+
+.item {
+    display: inline-block;
+    font-size: 30px;
+    margin-right: 20px;
+    float: right;
+}
+
+.item a{
+    color: white;
+    text-decoration: none;
+}
+
+.index{
+    float: left;
+    margin-left: 10px
+}
