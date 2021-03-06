@@ -1,3 +1,18 @@
-.content {
-    background-color: pink;
+.dialogs {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 3fr 12fr;
+    grid-template-rows: auto;
+}
+
+.dialog_items {
+    padding: 20px;
+}
+
+
+.messages {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }

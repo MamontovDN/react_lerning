@@ -4,13 +4,13 @@ const Post = (props) => {
     return (
         <div className={`${s.item} ${s.clearfix}`}>
             <img
-                src="https://image.winudf.com/v2/image1/aW8uY3NvbGFuYW0ud2hhdHNhcHAuc3RpY2tlcnMucmlja21vcnR5X2ljb25fMTU1MTU3OTIzN18wNjg/icon.png?w=&fakeurl=1"
+                src={props.post.picSrc}
                 alt="rick"/>
             <div className={s.post}>
                 <p>
-                    {props.message}
+                    {props.post.message}
                 </p>
-                <div className={s.like}>Like <span>{props.like_amount}</span></div>
+                <div className={s.like}>Like <span>{props.post.like_amount}</span></div>
             </div>
         </div>
     )

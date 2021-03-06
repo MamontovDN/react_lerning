@@ -1,0 +1,49 @@
+.message {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.message img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.avatar {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.textBox {
+    padding: 10px;
+    border: #323270 3px solid;
+    border-radius: 10px;
+    font-size: 18px;
+    word-spacing: normal;
+    line-height: 1.5em;
+}
+
+.text {
+    width: 100%;
+    word-break: break-all;
+
+}
+
+.me {
+    align-self: flex-start;
+}
+
+.other {
+    align-self: flex-end;
+}
+
+.name {
+    align-self: center;
+    font-size: 20px;
+    margin-left: 30px;
+
+}
+
+.message a {
+    color: navy;
+    text-decoration: none;
+}

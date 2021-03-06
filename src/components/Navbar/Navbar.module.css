@@ -3,13 +3,7 @@
     grid-row: 1;
 }
 
-.item {
-    margin: 0 auto 15px auto;
-    font-size: 30px;
-}
-
-.item a{
-    color: slategray;
-    text-decoration: none;
-
+.friends {
+    display: flex;
+    background-color: pink;
 }

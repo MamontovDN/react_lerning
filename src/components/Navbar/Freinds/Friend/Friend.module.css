@@ -1,0 +1,22 @@
+.friendItem {
+    display: inline-block;
+}
+
+.avatar img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.friend{
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.friend .name{
+    text-align: center;
+}
+
+.friend a{
+    color: navy;
+    text-decoration: none;
+}
