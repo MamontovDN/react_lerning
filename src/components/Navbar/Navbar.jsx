@@ -3,8 +3,6 @@ import NavItem from "./NavItem/NavItem";
 import Friends from "./Freinds/Friends";
 
 const Navbar = (props) => {
-
-    console.log(props)
     return (
         <nav className={s.nav}>
             <NavItem to={'/profile/'} title={'Profile'} />

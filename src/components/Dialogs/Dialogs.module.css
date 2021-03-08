@@ -2,7 +2,7 @@
     grid-column: 2;
     display: grid;
     grid-template-columns: 3fr 12fr;
-    grid-template-rows: auto;
+    grid-template-rows: auto 200px;
 }
 
 .dialog_items {
@@ -15,4 +15,39 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    background-color: #fafafa;
+    margin-bottom: 10px;
+}
+
+.new_message {
+    grid-column: 2;
+
+}
+
+.new_message textarea {
+    background-color: lightgoldenrodyellow;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    border-radius: 6px;
+    resize: none;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: navy;
+    padding: 12px 9px;
+    width: 100%;
+    height: 150px;
+}
+
+.send {
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    background-color: #323270;
+    color: lightgoldenrodyellow;
+    font-size: 25px;
+    border: 0;
 }
