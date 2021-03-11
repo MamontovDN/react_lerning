@@ -10,7 +10,7 @@ const Navbar = (props) => {
             <NavItem to={'/news/'} title={'News'} />
             <NavItem to={'/music/'} title={'Music'} />
             <NavItem to={'/settings/'} title={'Settings'} />
-            <Friends friends={props.navbar.friends}/>
+            <Friends friends={props.navBarPage.friends}/>
         </nav>
     )
 }

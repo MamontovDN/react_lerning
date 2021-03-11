@@ -5,7 +5,7 @@ import NewPost from "./NewPost/NewPost";
 import Posts from "./Posts/Posts";
 
 const Profile = (props) => {
-    let profile = props.profile;
+    let profile = props.profilePage;
     return (
         <div className={s.content}>
             <Top src={profile.topSrc}/>

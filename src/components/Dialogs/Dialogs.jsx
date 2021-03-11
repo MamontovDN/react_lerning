@@ -8,10 +8,10 @@ const Dialogs = (props) => {
     let newMessage = React.createRef();
     let me = 1
     let other = 2
-    let otherName = props.messagesPage.dialogs.find(x => x.id === other).title
-    let myName = props.messagesPage.dialogs.find(x => x.id === me).title
-    let dialogItems = props.messagesPage.dialogs.map(dialog => <DialogItem title={dialog.title} id={dialog.id}/>)
-    let messageItems = props.messagesPage.messages.map(message => {
+    let otherName = props.dialogsPage.dialogs.find(x => x.id === other).title
+    let myName = props.dialogsPage.dialogs.find(x => x.id === me).title
+    let dialogItems = props.dialogsPage.dialogs.map(dialog => <DialogItem title={dialog.title} id={dialog.id}/>)
+    let messageItems = props.dialogsPage.messages.map(message => {
         let name;
         let userClass;
         if (message.id === me){
@@ -42,7 +42,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.new_message}>
                 <textarea onChange={onNewMassageChange}
-                          value={props.messagesPage.newMessageText}
+                          value={props.dialogsPage.newMessageText}
                           ref={newMessage}
                           placeholder="Ваше сообщение ..."/>
                 <button onClick={sendMessage} className={s.send}>Send</button>

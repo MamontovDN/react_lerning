@@ -4,7 +4,7 @@ import navBarReducer from "./navBarReducer";
 
 let store = {
     _state: {
-        profile: {
+        profilePage: {
             newPostText: "",
             topSrc: "https://www.10wallpaper.com/wallpaper/1366x768/1510/wavy_lines_backgrounds_glitter-Design_HD_Wallpaper_1366x768.jpg",
             info: {
@@ -53,7 +53,7 @@ let store = {
                 },
             ]
         },
-        messagesPage: {
+        dialogsPage: {
             dialogs: [
                 {id: 1, title: 'Dmitriy'},
                 {id: 2, title: 'Tanya'},
@@ -118,7 +118,7 @@ let store = {
         console.log("state was changed")
     },
 
-    get state() {
+    get getState() {
         return this._state
     },
     subscribe(observer) {
@@ -126,10 +126,10 @@ let store = {
     },
 
     dispatch(action) { // action = {type: 'ADD-POST' } or {type: 'UPDATE-NEW-POST-TEXT', message: 'text'}
-        this.state.profile = profileReducer(this.state.profile, action)
-        this.state.messagesPage = dialogsReducer(this.state.messagesPage, action)
-        this.state.navBarPage = navBarReducer(this.state.navBarPage, action)
-        this._callSubscriber(this.state)
+        this.getState.profile = profileReducer(this.getState.profilePage, action)
+        this.getState.messagesPage = dialogsReducer(this.getState.dialogsPage, action)
+        this.getState.navBarPage = navBarReducer(this.getState.navBarPage, action)
+        this._callSubscriber(this.getState)
     },
 }
 
