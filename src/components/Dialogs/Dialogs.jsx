@@ -1,35 +1,31 @@
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogsItem/DialogsItem";
-import Messages from "./Message/Message";
-import * as React from "react";
-import {addMessageCreator, updateNewMessageTextCreator} from "../../redux/dialogsReducer";
+import Message from "./Message/Message";
+import React from "react";
+
 
 const Dialogs = (props) => {
     let newMessage = React.createRef();
-    let me = 1
-    let other = 2
-    let otherName = props.dialogsPage.dialogs.find(x => x.id === other).title
-    let myName = props.dialogsPage.dialogs.find(x => x.id === me).title
-    let dialogItems = props.dialogsPage.dialogs.map(dialog => <DialogItem title={dialog.title} id={dialog.id}/>)
-    let messageItems = props.dialogsPage.messages.map(message => {
+    let otherName = props.state.dialogs.find(x => x.id !== props.myId).title
+    let myName = props.state.dialogs.find(x => x.id === props.myId).title
+    let dialogItems = props.state.dialogs.map(dialog => <DialogItem title={dialog.title} id={dialog.id}/>)
+    let messageItems = props.state.messages.map(message => {
         let name;
         let userClass;
-        if (message.id === me){
+        if (message.id === props.myId){
             name = myName
             userClass = "me"
         } else {
             name = otherName
             userClass = "other"
         }
-        return <Messages message={message} userClass={userClass} name={name}/>
+        return <Message message={message} userClass={userClass} name={name}/>
     })
     let sendMessage = () => {
-        let action = addMessageCreator()
-        props.dispatch(action)
+        props.sendMessage()
     }
-    let onNewMassageChange = (event) => {
-        let action = updateNewMessageTextCreator(event.target.value)
-        props.dispatch(action)
+    let onNewMassageChange = (e) => {
+        props.newMessage(e.target.value)
     }
 
     return (
@@ -42,7 +38,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.new_message}>
                 <textarea onChange={onNewMassageChange}
-                          value={props.dialogsPage.newMessageText}
+                          value={props.state.newMessageText}
                           ref={newMessage}
                           placeholder="Ваше сообщение ..."/>
                 <button onClick={sendMessage} className={s.send}>Send</button>

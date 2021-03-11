@@ -1,19 +1,15 @@
 import s from './NewPost.module.css'
-import * as React from "react";
-import {addPostCreator, updateNewPostTextCreator} from "../../../redux/profileReducer";
-
+import React from "react";
 
 
 const NewPost = (props) => {
     let newPostElement = React.createRef();
     let addPost = () => {
-        let action = addPostCreator()
-        props.dispatch(action)
+        props.addPost()
     }
-    let onPostChange = () => {
+    let newPostChange = () => {
         let text = newPostElement.current.value;
-        let action = updateNewPostTextCreator(text);
-        props.dispatch(action)
+        props.updateNewPostTextCreator(text)
     }
     return (
         <div>
@@ -22,7 +18,7 @@ const NewPost = (props) => {
                 <div className={s.text_area_container}>
                     <textarea value={props.newPostText} ref={newPostElement}
                               placeholder="Ваш пост" className={s.text_area}
-                              onChange={onPostChange}/>
+                              onChange={newPostChange}/>
                 </div>
                 <div className={s.button_container}>
                     <button onClick={addPost} className={s.button_send}>Send</button>
